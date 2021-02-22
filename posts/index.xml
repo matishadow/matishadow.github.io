@@ -1726,4 +1726,78 @@ REIsTheBest</p>
 <p>This is indeed correct!</p>
 <h2 id="summary">Summary</h2>
 <p>Even though the encoding of the password was close to none the whole process showed how to quickly get to the interesting part of the binary.</p>
+]]></content></item><item><title>O hasłach</title><link>/posts/o-haslach/</link><pubDate>Sat, 05 Nov 2016 18:41:58 +0100</pubDate><guid>/posts/o-haslach/</guid><description>tl:dr Komiks pożyczony z xkcd.com Jednak nie jesteśmy kreatywni Bez wątpienia tak jest, jeśli chodzi o wymyślanie haseł. Patrząc po statystykach z 2015 roku w czołówce najczęściej używanych haseł mamy tam takie perełki jak 123456, password, abc123 czy 1qaz2wsx. Mogłoby się wydawać, że tego typu haseł używamy przy rejestracji do 1001 serwisu, do którego i tak już nigdy więcej nie zajrzymy, niestety prawda jest dużo bardziej przykra. Skąd te dane? Pochodzą one z coraz to nowych wycieków, które dotykają często duże i wydawałoby się, przyzwoicie chronione serwisy.</description><content type="html"><![CDATA[<h3 id="tldr">tl:dr</h3>
+<p><img src="https://matishadow.files.wordpress.com/2016/07/password_strength.png" alt="alt text"></p>
+<h6 id="komiks-pożyczony-z-xkcdcom">Komiks pożyczony z xkcd.com</h6>
+<h3 id="jednak-nie-jesteśmy-kreatywni">Jednak nie jesteśmy kreatywni</h3>
+<p>Bez wątpienia tak jest, jeśli chodzi o wymyślanie haseł. Patrząc po statystykach z 2015 roku w czołówce najczęściej używanych haseł mamy tam takie perełki jak <strong>123456</strong>, <strong>password</strong>, <strong>abc123</strong> czy <strong>1qaz2wsx</strong>. Mogłoby się wydawać, że tego typu haseł używamy przy rejestracji do 1001 serwisu, do którego i tak już nigdy więcej nie zajrzymy, niestety prawda jest dużo bardziej przykra.
+Skąd te dane? Pochodzą one z coraz to nowych wycieków, które dotykają często duże i wydawałoby się, przyzwoicie chronione serwisy. I mimo że hasła te nie są przechowywane w bazach danych jako &ldquo;odkryty tekst&rdquo; (ang. plain text), a w postaci haszy, to niepokojąco często używane są przestarzałe algorytmy haszujące, które nie zapewniają bezpieczeństwa. Lub też wykradzione hasła są tak słabe, że złamanie ich zajmuje chwile.</p>
+<p>Wycieki te zdarzają się tak często, że w każdej chwili mogą dotknąć jeden z serwisów, których używasz!</p>
+<p>Jeżeli Twoje hasło znajduje się w jakiejkolwiek statystyce haseł (wstydź się!), zawiera imię, tytuł filmu, datę urodzin, &hellip; lub też jest krótsze niż 8 znaków to po przeczytaniu tego artykułu radzę jak najszybciej je zmienić!</p>
+<p>Tylko na jakie? Odwołując się do powyższego komiksu - jesteśmy nauczeni, że im bardziej skomplikowane i pokręcone (a co za tym idzie trudne do zapamiętania) jest hasło tym jest ono lepsze. Czy aby na pewno tak jest?</p>
+<h3 id="typy-ataków-na-hasła">Typy ataków na hasła</h3>
+<p>Dwie podstawowe kategorie ataków na hasła to: <strong>brute-force</strong> oraz <strong>atak słownikowy</strong>. Stosowane są również pewne usprawnienia powyższych metod jak również ich kombinacje.</p>
+<p><strong>Brute-force</strong> polega na sprawdzaniu kombinacji znaków do momentu aż natrafimy na szukane hasło. A więc im większy jest zakres znaków jakie używamy w haśle oraz im dłuższe ono jest tym trudniej jest je złamać.</p>
+<p>Dla przykładu, gdy nasze hasło składa się z 6 znaków i używamy w nim tylko małych liter, liczba kombinacji do sprawdzenia wynosi: 308 915 776 (zakładając 26 liter w alfabecie) - przy mocy obliczeniowej dzisiejszych komputerów, złamanie go zajmuje chwilę.</p>
+<p>W przypadku użycia małych oraz wielkich liter mamy do dyspozycji 52 znaki (52^6 = 19 770 609 664). Dorzucając do tego parę znaków specjalnych (!@%-.,&amp;*) oraz cyfry otrzymujemy około 70 znaków. Przy takiej liczbie znaków do wykorzystania nawet na szybkich komputerach czas łamania hasła o długości 8+ znaków niezwykle szybko się wydłuża.
+Z powodu niskiej wydajności technika ta jest rzadko stosowana, można ją jednak wykorzystać do rozszerzenia metody słownikowej.</p>
+<p>Do <strong>metody słownikowej</strong> wykorzystywane są listy najczęściej używanych haseł. Na takie listy składają się hasła z wyżej wspomnianych wycieków, najczęściej używane słowa w danym języku, imiona, tytuły filmów, nazwy zespołów itp.</p>
+<p>Metoda ta zwykle jest rozszerzana o tzw. &ldquo;zbiór reguł&rdquo;. Rozszerzenie to polega na modyfikacji każdego potencjalnego słowa w słowniku korzystając z wcześniej napisanych reguł.</p>
+<p>Przykładami takich reguł są:</p>
+<ul>
+<li>Zamiana pierwszej litery na wielką (w przypadku, gdy jakaś strona wymaga użycia wielkich i małych liter prawie zawsze zamieniamy pierwszą literę na wielką)</li>
+<li>Naprzemienne użycie małych i wielkich liter (MoCnEhAsLo)</li>
+<li>Zamiana &lsquo;A&rsquo; na @, &lsquo;E&rsquo; na 3, &lsquo;S&rsquo; na 5 itd. (a.k.a. <a href="https://en.wikipedia.org/wiki/Leet">leet speak</a>)</li>
+<li>Dopisanie paru cyfr na koniec (XXX123, XXX1234)</li>
+<li>Dopisanie znaku specjalnego na koniec (XXX!, XXX$)</li>
+</ul>
+<p>Pod <a href="http://contest-2010.korelogic.com/rules.html">tym linkiem</a> znajduje się więcej zasad używanych podczas łamania haseł.</p>
+<h3 id="wybór-hasła">Wybór hasła</h3>
+<p>Jakie więc hasło wybrać?</p>
+<p>Z charakterystyki pierwszego ataku wiemy, że musi ono mieć co najmniej 10 znaków, inaczej będzie je łatwo złamać metodą <strong>brute-force</strong>.</p>
+<p>Aby zapewnić sobie ochronę przed <strong>atakami słownikowymi</strong> trzeba cóż&hellip; mieć pewność, że nasze hasło nie znajdzie w żadnym ze słowników (zakładamy również użycie &ldquo;reguł&rdquo;).
+W tym miejscu skorzystamy z definicji <strong>entropii</strong>. Jest to miara średniej ilości informacji. Im jest większa tym więcej informacji niesie ze sobą dana wiadomość. Im hasło ma większą entropię tym trudniej jest je zgadnąć korzystając z metody słownikowej.
+Jak więc wybrać hasło, które niełatwo będzie &ldquo;zgadnąć&rdquo;? Logika podpowiada, że im bardziej nieprzewidywalne (losowe) ono będzie, tym lepiej!
+Jednakże, gdy wybierzemy losowe znaki i wyjdzie nam np. <em>&ldquo;P)fQtEd_7H&amp;ny,4G&rdquo;</em> nie będzie to łatwe do zapamiętania hasło.</p>
+<h3 id="diceware">Diceware</h3>
+<p>Z pomocą przychodzi nam technika o nazwie <strong>Diceware!</strong></p>
+<p>Działa ona w następujący sposób. Bierzemy słownik, który zawiera przynajmniej 70'000 ponumerowanych słów. Następnie pięciokrotnie rzucamy kostką do gry i zapisujemy wylosowane liczby. Składamy je w jedną pięciocyfrową liczbę i zapisujemy słowo o otrzymanym numerze. Wybieramy tak minimum 6 słów (przy mocy obliczeniowej dzisiejszych komputerów próg sześciu słów jest uważany za bezpieczny).</p>
+<p>Do użytku &ldquo;domowego&rdquo; można skorzystać z bezpiecznego generatora liczb (jednego z generatorów używanych w kryptografii) zamiast rzucać prawdziwą kostką.</p>
+<p>Można również wykorzystać poniższy projekt, który wygeneruje hasło za nas techniką <strong>diceware</strong>.
+<a href="https://www.rempe.us/diceware/#polish">https://www.rempe.us/diceware/#polish</a></p>
+<p>Po wejściu na stronę klikamy w odpowiedni przycisk - w zależności ilu słów chcemy użyć. (cały proces generowania hasła odbywa się po stronie przeglądarki więc hasło widzimy tylko my)</p>
+<p><img src="https://matishadow.files.wordpress.com/2016/10/chrome_2016-10-12_19-38-25.png" alt=""></p>
+<p>Hasło wygenerowane za pomocą <strong>diceware</strong> dużo łatwiej jest zapamiętać (na przykład tworząc sobie jakąś historyjkę złożoną z tych słów) niż losowe 16 znaków.</p>
+<h3 id="teoria">Teoria</h3>
+<p>Okej. Mamy już nasz hasło. Teraz pytanie, jak trudno je złamać?</p>
+<p>Zacznijmy od ataku <strong>brute-force</strong>.
+Porównajmy nasze hasło z dosyć bezpiecznym, ale trudnym do zapamiętania losowo wygenerowanym hasłem <em>&ldquo;D%^9%Pq2v^M=8G&rdquo;</em>.</p>
+<p>Załóżmy, że mamy do dyspozycji 24 litery alfabetu (małe i wielkie), 10 cyfr oraz 10 znaków specjalnych. Na każdej z 14 pozycji może stać jeden z 68 znaków. Mamy więc 45198578652761699462938624 różnych możliwości.</p>
+<p>W przypadku <strong>diceware</strong> obliczenia wyglądają nieco inaczej.
+Mamy do wyboru jedno z 70 000 słów na każdą z 6 pozycji. W tym przypadku jest to 117649000000000000000000000000 możliwości.</p>
+<p>Jak widać pomimo tego, że w naszym haśle używamy tylko małych liter to liczba możliwości przewyższa wcześniej wygenerowane 14-znakowe hasło.</p>
+<p>Liczba kombinacji jest tak duża, że spokojnie możemy uznać nasz hasło za odporne na <strong>brute-force</strong>.</p>
+<h3 id="praktyka">Praktyka</h3>
+<p>Przetestujmy jak hasło wygenerowane przez <strong>diceware</strong> sprawdzi się wobec ataku słownikowego.</p>
+<p>Wybierzmy najpierw kilka haseł podatnych na ataki słownikowe i policzmy z nich hasz (SHA-256):</p>
+<ol>
+<li>haslo123 - <em>a15f8ae07675bfb96e084bfb4f52fb2c22091061aae86e0eb76a55f4e52dd74e</em></li>
+<li>PaSsWoRd - <em>8ca8e5726d7ebff4d521a6194e51223398c4d74329512504f8a4ea3a0dc73487</em></li>
+<li>nirvana12345 - <em>957cf452da2542857e3977ea2345c45ab57b0174a8ab3f8060616d4299e97c26</em></li>
+<li>harrypotter123 - <em>b079508661b8f93b1e32492e2ac619f2f60975704b1dbb993e171437aeaf51a4</em></li>
+</ol>
+<p>Policzmy też hasz z hasła wygenerowanego przez <strong>diceware</strong>:
+&ldquo;wycisk-chwyt-marka-czep-zimno-knajpa&rdquo; - <em>8d6d1a0c5ae4d2c80cc04ee2a2ba1ca44a12768e5b9db7ac0d0366e36239a977</em></p>
+<p>Do ataku wykorzystamy darmowy i łatwy w obsłudze portal <a href="https://crackstation.net/">Crackstation</a>. (warto wspomnieć tutaj o bardziej zaawansowanym narzędziu jakim jest <a href="https://hashcat.net/hashcat/">hashcat</a>) Wystarczy wkleić hasze, przepisać captchę i wcisnąć przycisk.</p>
+<p><img src="https://matishadow.files.wordpress.com/2016/11/chrome_2016-11-04_20-20-53.png" alt=""></p>
+<p>Po chwili strona wyrzuca nam wynik. Wszystkie 4 hasła udało się odzyskać z haszy bez żadnego problemu.</p>
+<p>Hasła wygenerowanego przez <strong>diceware</strong> nie udało się jej jednak złamać:</p>
+<p><img src="https://matishadow.files.wordpress.com/2016/11/chrome_2016-11-04_21-05-39.png" alt=""></p>
+<h3 id="menadżery-haseł">Menadżery haseł</h3>
+<p>A co jeśli nasze hasło nie było przechowywane w formie haszu a w formie zwykłego tekstu? Nieważne wtedy jak silne było nasze hasło, w przypadku wycieku danych i tak wszyscy mają dostęp do jawnej postaci tego hasła.</p>
+<p>Jak się przed tym zabezpieczyć? Korzystać z któregoś z <strong>menadżerów haseł</strong>. Mamy więc jedno mocne i łatwo do zapamiętania hasło, którym logujemy się do menadżera haseł. Następnie taki menadżer generuje nam losowe hasła (nie muszą być łatwe do zapamiętania, robi to za nas menadżer) oraz pilnuje abyśmy nie używali tego samego hasła w różnych serwisach.</p>
+<p>W ten sposób, nawet jeśli nasze hasło wycieknie w czystej postaci z któregoś z serwisów to będzie to hasło używane tylko w tym serwisie i nie zagrozi to bezpieczeństwu innych naszych kont.</p>
+<p>Od siebie polecę darmową usługę <a href="https://www.lastpass.com/">LastPass</a>, gdyż jako jedyna posiada w swojej ofercie bezpłatną aplikację mobilną.</p>
+<h3 id="podsumowanie">Podsumowanie</h3>
+<p>W dobie coraz to częstszych ataków na serwisy internetowe, a co z tym idzie wycieków baz danych coraz większą rolę odgrywa siła hasła. Jeśli więc zależy Ci na bezpieczeństwie Twoich kont, rozważ zmianę haseł na nieco mocniejsze!</p>
 ]]></content></item></channel></rss>
